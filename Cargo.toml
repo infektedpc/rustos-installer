@@ -1,0 +1,21 @@
+[package]
+name = "rustos-installer"
+version = "0.1.0"
+edition = "2021"
+description = "Package manager and system installer for RustOS: .rpk packages, dependency resolution, installed-package database, and whole-disk install onto rustos-image disk images (std-only)"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "rustos_installer"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rustos-installer"
+path = "src/main.rs"
+
+[dependencies]
+rustos-image = { path = "../rustos-image" }
+rustos-fs = { path = "../rustos-fs" }
+
+[profile.release]
+debug = false
